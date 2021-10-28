@@ -1,3 +1,4 @@
+<?xml version="1.0" ?>
 <launch>
 
   <!-- GDB Debug Option -->
@@ -24,6 +25,9 @@
 
   <!--Other settings-->
   <arg name="load_gripper" default="true" />
+  <arg name="gripper_center" default="true"/>
+  <arg name="gripper_center_xyz" default="0.0 0.0 0.10"/>
+  <arg name="on_mobile_base" default="true" />
 
   <!-- load these non-default MoveGroup capabilities (space seperated) -->
   <!--
@@ -46,6 +50,9 @@
   <include file="$(dirname)/planning_context.launch">
     <arg name="load_robot_description" value="$(arg load_robot_description)" />
     <arg name="load_gripper" value="$(arg load_gripper)" />
+    <arg name="gripper_center" value="$(arg gripper_center)"/>
+    <arg name="gripper_center_xyz" value="$(arg gripper_center_xyz)"/>
+    <arg name="on_mobile_base" value="$(arg on_mobile_base)" />
   </include>
 
   <!-- Planning Pipelines -->

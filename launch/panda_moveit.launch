@@ -1,10 +1,17 @@
 <?xml version="1.0" ?>
 <launch>
   <arg name="load_gripper" default="true" />
+  <!-- Allow user to specify if they want an extra gripper center frame -->
+  <arg name="gripper_center" default="false" />
+  <arg name="gripper_center_xyz" default="0.0 0.0 0.10" />
+  <arg name="on_mobile_base" default="true" />
 
   <include file="$(dirname)/ros_controllers.launch"/>
 
   <include file="$(dirname)/move_group.launch">
     <arg name="load_gripper" value="$(arg load_gripper)" />
+    <arg name="gripper_center" value="$(arg gripper_center)" />
+    <arg name="gripper_center_xyz" value="$(arg gripper_center_xyz)" />
+    <arg name="on_mobile_base" value="$(arg on_mobile_base)" />
   </include>
 </launch>

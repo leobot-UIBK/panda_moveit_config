@@ -11,8 +11,14 @@
   <!-- By default, we are not in debug mode -->
   <arg name="debug" default="false" />
 
+  <arg name="on_mobile_base" default="false" />
+
   <!-- By default we will load the gripper -->
   <arg name="load_gripper" default="true" />
+
+  <!-- Allow user to specify if they want an extra gripper center frame -->
+  <arg name="gripper_center" default="true"/>
+  <arg name="gripper_center_xyz" default="0.0 0.0 0.122"/>      <!-- prev was 0.0 0.0 0.10 -->
 
   <!-- By default, we will load or override the robot_description -->
   <arg name="load_robot_description" default="true"/>
@@ -58,6 +64,9 @@
     <arg name="pipeline" value="$(arg pipeline)"/>
     <arg name="load_gripper" value="$(arg load_gripper)"/>
     <arg name="load_robot_description" value="$(arg load_robot_description)"/>
+    <arg name="gripper_center" value="$(arg gripper_center)"/>
+    <arg name="gripper_center_xyz" value="$(arg gripper_center_xyz)"/>
+    <arg name="on_mobile_base" value="$(arg on_mobile_base)" />
   </include>
 
   <!-- Run Rviz and load the default config to see the state of the move_group node -->

@@ -4,18 +4,37 @@
     A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
 -->
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="panda">
-    <xacro:include filename="$(find panda_moveit_config)/config/panda_arm.xacro" />
-    <xacro:panda_arm />
+    <!-- Initialize gripper_center properties -->
+    <xacro:arg name="gripper_center" default="true" />
+    <xacro:property name="gripper_center" value="$(arg gripper_center)"/>
 
-    <xacro:arg name="hand" default="false" />
+    <!-- Initialize on_mobile_base properties -->
+    <xacro:arg name="on_mobile_base" default="true" />
+    <xacro:property name="on_mobile_base" value="$(arg on_mobile_base)"/>
+
+    <xacro:include filename="$(find panda_moveit_config)/config/panda_arm.xacro" />
+    <xacro:panda_arm on_mobile_base="${on_mobile_base}"/>
+
+    <xacro:arg name="hand" default="true" />
 
     <!--Add the hand if people request it-->
     <xacro:if value="$(arg hand)">
         <xacro:include filename="$(find panda_moveit_config)/config/hand.xacro" />
-        <xacro:hand />
+        <xacro:hand gripper_center="${gripper_center}" /> <!-- Added extra xacro macro argument for the new virtual center gripper link -->/>
+
+        <group name="panda_arm_hand">
+            <group name="panda_arm" />
+            <group name="hand" />
+        </group>
 
         <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-        <end_effector name="hand" parent_link="panda_link8" group="hand"/>
+        <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+        <!--end_effector name="hand" parent_link="panda_link8" group="hand" parent_group="panda_arm" / -->
+        <!-- Added extra virtual joint to ease the grasp movement planning -->
+        <!-- xacro:if value="${gripper_center}" --> <!-- Only when gripper_center==True -->
+        <!-- virtual_joint name="world" type="planar" parent_frame="world" child_link="panda_link0" /-->
+        <end_effector name="gripper_center" parent_link="panda_gripper_center" group="hand" parent_group="panda_arm" />
+        <!-- /xacro:if -->
     </xacro:if>
 
 </robot>

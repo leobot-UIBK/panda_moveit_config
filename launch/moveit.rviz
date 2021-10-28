@@ -42,7 +42,7 @@ Visualization Manager:
       Value: true
     - Class: rviz/MarkerArray
       Enabled: true
-      Marker Topic: /rviz_visual_tools
+      Marker Topic: /franka_move_node/visualization_marker_array
       Name: MarkerArray
       Namespaces:
         {}
