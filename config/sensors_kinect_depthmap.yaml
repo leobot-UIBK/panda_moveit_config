@@ -8,4 +8,4 @@ sensors:
     padding_scale: 4.0
     padding_offset: 0.03
     max_update_rate: 1.0
-    filtered_cloud_topic: filtered_cloud
+    filtered_cloud_topic: filtered_cloud_do_not_use_depthmap
