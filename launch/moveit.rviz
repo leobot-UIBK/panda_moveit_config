@@ -3,7 +3,9 @@ Panels:
     Help Height: 87
     Name: Displays
     Property Tree Widget:
-      Expanded: ~
+      Expanded:
+        - /TF1
+        - /TF1/Frames1
       Splitter Ratio: 0.7425600290298462
     Tree Height: 393
   - Class: rviz/Help
@@ -45,7 +47,8 @@ Visualization Manager:
       Marker Topic: /franka_move_node/visualization_marker_array
       Name: MarkerArray
       Namespaces:
-        {}
+        Path: true
+        Sphere: true
       Queue Size: 100
       Value: true
     - Class: moveit_rviz_plugin/Trajectory
@@ -259,6 +262,113 @@ Visualization Manager:
         Show Robot Collision: false
         Show Robot Visual: true
       Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        camera_arm_bottom_screw_frame:
+          Value: false
+        camera_arm_color_frame:
+          Value: false
+        camera_arm_color_optical_frame:
+          Value: false
+        camera_arm_depth_frame:
+          Value: false
+        camera_arm_depth_optical_frame:
+          Value: false
+        camera_arm_link:
+          Value: false
+        camera_base_bottom_screw_frame:
+          Value: false
+        camera_base_link:
+          Value: false
+        odom:
+          Value: false
+        panda_EE:
+          Value: false
+        panda_K:
+          Value: false
+        panda_base:
+          Value: false
+        panda_footprint:
+          Value: false
+        panda_gripper_center:
+          Value: true
+        panda_hand:
+          Value: false
+        panda_leftfinger:
+          Value: false
+        panda_link0:
+          Value: false
+        panda_link1:
+          Value: false
+        panda_link2:
+          Value: false
+        panda_link3:
+          Value: false
+        panda_link4:
+          Value: false
+        panda_link5:
+          Value: false
+        panda_link6:
+          Value: false
+        panda_link7:
+          Value: false
+        panda_link8:
+          Value: false
+        panda_rightfinger:
+          Value: false
+        temp_link:
+          Value: false
+        world:
+          Value: false
+      Marker Alpha: 1
+      Marker Scale: 1
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        world:
+          odom:
+            panda_base:
+              panda_footprint:
+                {}
+              panda_link0:
+                camera_base_bottom_screw_frame:
+                  camera_base_link:
+                    {}
+                panda_link1:
+                  panda_link2:
+                    panda_link3:
+                      panda_link4:
+                        panda_link5:
+                          panda_link6:
+                            panda_link7:
+                              panda_link8:
+                                panda_EE:
+                                  panda_K:
+                                    {}
+                                panda_hand:
+                                  camera_arm_bottom_screw_frame:
+                                    camera_arm_link:
+                                      camera_arm_color_frame:
+                                        camera_arm_color_optical_frame:
+                                          {}
+                                      camera_arm_depth_frame:
+                                        camera_arm_depth_optical_frame:
+                                          {}
+                                  panda_gripper_center:
+                                    {}
+                                  panda_leftfinger:
+                                    {}
+                                  panda_rightfinger:
+                                    {}
+                temp_link:
+                  {}
+      Update Interval: 0
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -312,5 +422,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1366
-  X: 169
-  Y: 109
+  X: 167
+  Y: 79

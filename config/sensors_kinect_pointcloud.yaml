@@ -1,8 +1,9 @@
 sensors:
   - sensor_plugin: occupancy_map_monitor/PointCloudOctomapUpdater
     point_cloud_topic: /camera_arm/depth/color/points
-    max_range: 2.0
-    point_subsample: 1
+    max_range: 1.0
+    # we don't have a gpu at the leobot so we need to reduce the pointcloud by a lot. However this seams to be enough to detect tables. Maybe this needs to be reduced even further
+    point_subsample: 100
     padding_offset: 0.1
     padding_scale: 1.0
     max_update_rate: 1.0
