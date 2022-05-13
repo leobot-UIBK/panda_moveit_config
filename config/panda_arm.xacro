@@ -202,6 +202,15 @@ rosservice call /franka_move_node/move_joints "{joint_1: 0.0, joint_2: -1.5, joi
       <joint name="panda_joint6" value="1.37" />
       <joint name="panda_joint7" value="0.484" />
     </group_state>
+    <group_state name="poseHomeChessBoard" group="panda_arm">
+      <joint name="panda_joint1" value="0.0" />
+      <joint name="panda_joint2" value="0.136" />
+      <joint name="panda_joint3" value="0.0" />
+      <joint name="panda_joint4" value="-2.001" />
+      <joint name="panda_joint5" value="0.0" />
+      <joint name="panda_joint6" value="2.129" />
+      <joint name="panda_joint7" value="0.785" />
+    </group_state>
 
     <!-- The virtual joint is used to set pandas planning frame. This will be the parent_frame. -->
     <!-- If the type is set to planar it is expected that the panda is mounted on a mobile platform. If the panda is static use type fixed. -->
