@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<launch>
+<group>
 
   <!-- GDB Debug Option -->
   <arg name="debug" default="false" />
@@ -29,6 +29,7 @@
   <arg name="gripper_center_xyz" default="0.0 0.0 0.10"/>
   <arg name="on_mobile_base" default="true" />
   <arg name="flexible_ee" default="true" />
+  <arg name="sensors" default="false" /> <!-- enables the moveit depth sensor functionality -->
 
   <!-- load these non-default MoveGroup capabilities (space seperated) -->
   <!--
@@ -91,9 +92,11 @@
   </include>
 
   <!-- Sensors Functionality -->
-  <include ns="move_group" file="$(dirname)/sensor_manager.launch.xml" if="$(arg allow_trajectory_execution)">
-    <arg name="moveit_sensor_manager" value="panda" />
-  </include>
+  <group if="$(arg sensors)" >
+    <include ns="move_group" file="$(dirname)/sensor_manager.launch.xml" if="$(arg allow_trajectory_execution)">
+      <arg name="moveit_sensor_manager" value="panda" />
+    </include>
+  </group>
 
   <!-- Start the actual move_group node/action server -->
   <node name="move_group" launch-prefix="$(arg launch_prefix)" pkg="moveit_ros_move_group" type="move_group" respawn="false" output="screen" args="$(arg command_args)">

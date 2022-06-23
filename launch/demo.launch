@@ -22,6 +22,8 @@
 
   <arg name="flexible_ee" default="true" />
 
+  <arg name="sensors" default="false" />
+
   <!-- By default, we will load or override the robot_description -->
   <arg name="load_robot_description" default="true"/>
 
@@ -70,6 +72,7 @@
     <arg name="gripper_center_xyz" value="$(arg gripper_center_xyz)"/>
     <arg name="on_mobile_base" value="$(arg on_mobile_base)" />
     <arg name="flexible_ee" value="$(arg flexible_ee)" />
+    <arg name="sensors" value="$(arg sensors)" />
   </include>
 
   <!-- Run Rviz and load the default config to see the state of the move_group node -->
