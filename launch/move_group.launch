@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<group>
+<launch>
 
   <!-- GDB Debug Option -->
   <arg name="debug" default="false" />
@@ -115,5 +115,4 @@
     <param name="planning_scene_monitor/publish_state_updates" value="$(arg publish_monitored_planning_scene)" />
     <param name="planning_scene_monitor/publish_transforms_updates" value="$(arg publish_monitored_planning_scene)" />
   </node>
-
 </launch>
