@@ -20,7 +20,7 @@
   <arg name="gripper_center" default="true"/>
   <arg name="gripper_center_xyz" default="0.0 0.0 0.265"/>      <!-- prev was 0.0 0.0 0.10 -->
 
-  <arg name="flexible_ee" default="true" />
+  <arg name="flexible_ee" default="false" />
 
   <arg name="sensors" default="false" />
 
