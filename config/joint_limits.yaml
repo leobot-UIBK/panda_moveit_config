@@ -25,50 +25,50 @@ joint_limits:
     has_acceleration_limits: false
     max_acceleration: 0
   panda_joint1:
-    min_position: -2.813 # max - 3%   max:-2.897
-    max_position:  2.813 # max - 3%   max:2.897
+    min_position: -2.8683 # -0.5% on both directions, total of 1% cut off # max:-2.897 - original
+    max_position:  2.683 # max:2.897
     has_velocity_limits: true
     max_velocity: 1.2 #0.6  # 2.1750
     has_acceleration_limits: true
     max_acceleration: 3.75
   panda_joint2:
-    min_position: -1.658 # max-3% max:-1.763
-    max_position:  1.658 # max-3% max:1.763
+    min_position: -1.7452 # max-1% max:-1.763
+    max_position:  1.7452 # max-1% max:1.763
     has_velocity_limits: true
     max_velocity: 1.2 #0.6 #2.1750
     has_acceleration_limits: true
     max_acceleration: 1.875
   panda_joint3:
-    min_position: -2.723 # max-3% max:-2.897
-    max_position:  2.723 # max-3% max:2.897
+    min_position: -2.8683 # max -1%, max: -2.897
+    max_position:  2.8683 # max-1% max:2.897
     has_velocity_limits: true
     max_velocity: 1.2 #0.6 #2.1750
     has_acceleration_limits: true
     max_acceleration: 2.5
   panda_joint4:
-    min_position: -2.982 # max-3% max:-3.072
-    max_position: -0.16 # max-3% max:-0.07
+    min_position: -3.0568 # max-1% max:-3.072
+    max_position: -0.0848 # max-1% max:-0.07
     has_velocity_limits: true
     max_velocity: 1.2 #0.6 #2.1750
     has_acceleration_limits: true
     max_acceleration: 3.125
   panda_joint5:
-    min_position: -2.723 # max-3% max:-2.897
-    max_position: 2.723 # max-3% max:2.897
+    min_position: -2.8683 # max-1% max:-2.897
+    max_position:  2.8683 # max-1% max:2.897
     has_velocity_limits: true
     max_velocity: 1.2 #0.6 #2.6100
     has_acceleration_limits: true
     max_acceleration: 3.75
   panda_joint6:
-    min_position: 0.096 # max-3% max:-0.017
-    max_position: 3.639 # max-3% max:3.752
+    min_position: 0.0014 # max-1% max:-0.017
+    max_position: 3.7336 # max-1% max:3.752
     has_velocity_limits: true
     max_velocity: 1.2 #0.6 #2.6100
     has_acceleration_limits: true
     max_acceleration: 5
   panda_joint7:
-    min_position: -2.663 # max-3% max:-2.897
-    max_position: 2.663 # max-3% max:2.897
+    min_position: -2.8683 # max-1% max:-2.897
+    max_position:  2.8683 # max-1% max:2.897
     has_velocity_limits: true
     max_velocity: 1.2 #0.6 #2.6100
     has_acceleration_limits: true
