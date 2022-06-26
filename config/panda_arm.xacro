@@ -61,11 +61,11 @@ rosservice call /franka_move_node/move_joints "{joint_1: 0.0, joint_2: -1.5, joi
   joint_7: 0.79}" -->
     <group_state name="drive" group="panda_arm">
       <joint name="panda_joint1" value="0" />
-      <joint name="panda_joint2" value="-1.45" />
+      <joint name="panda_joint2" value="-1.35" />
       <joint name="panda_joint3" value="0" />
       <joint name="panda_joint4" value="-2.8996" />
       <joint name="panda_joint5" value="0" />
-      <joint name="panda_joint6" value="1.5" />
+      <joint name="panda_joint6" value="1.6" />
       <joint name="panda_joint7" value="0.785" />
     </group_state>
 
