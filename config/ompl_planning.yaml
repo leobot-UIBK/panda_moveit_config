@@ -130,6 +130,7 @@ planner_configs:
   TrajOpt:
     type: geometric::TrajOpt
 panda_arm:
+  default_planner_config: RRTstar
   planner_configs:
     - AnytimePathShortening
     - SBL
