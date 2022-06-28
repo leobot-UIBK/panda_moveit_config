@@ -131,7 +131,7 @@ planner_configs:
     type: geometric::TrajOpt
 
 panda_arm:
-  default_planner_config: TRRT # RRTConnect
+  default_planner_config: RRTstar
   planner_configs:
     - AnytimePathShortening
     - SBL
